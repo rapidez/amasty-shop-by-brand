@@ -5,8 +5,6 @@ namespace Rapidez\AmastyShopByBrand\Models\Scopes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Schema;
 use Rapidez\Core\RapidezFacade as Rapidez;
 
 class WithProductAmastyShopByBrandScope implements Scope
@@ -18,8 +16,8 @@ class WithProductAmastyShopByBrandScope implements Scope
         $builder
             ->selectRaw('MAX(amasty_amshopby_option_setting.image) as amasty_brand_image')
             ->leftJoin('amasty_amshopby_option_setting', function ($join) use ($model, $attribute) {
-                $join->on($model->getTable() . '.' . $attribute, '=', 'amasty_amshopby_option_setting.value')
-                     ->where('filter_code', 'attr_' . $attribute);
+                $join->on($model->getTable().'.'.$attribute, '=', 'amasty_amshopby_option_setting.value')
+                     ->where('filter_code', 'attr_'.$attribute);
             });
     }
 }

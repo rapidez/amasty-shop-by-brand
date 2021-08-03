@@ -2,7 +2,6 @@
 
 namespace Rapidez\AmastyShopByBrand;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Rapidez\AmastyShopByBrand\Models\Scopes\WithProductAmastyShopByBrandScope;
 use TorMorten\Eventy\Facades\Eventy;

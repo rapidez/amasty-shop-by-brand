@@ -1,4 +1,5 @@
 <?php
+
 if ($option = DB::table('eav_attribute_option')
     ->join('eav_attribute_option_value', 'eav_attribute_option_value.option_id', '=', 'eav_attribute_option.option_id')
     ->where('attribute_id', 83)
