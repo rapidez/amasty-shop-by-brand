@@ -13,7 +13,7 @@ class AmastyShopByBrandServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'amastyshopbybrand');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez/amasty-shop-by-brand'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/amastyshopbybrand'),
         ], 'views');
 
         Eventy::addFilter('routes', fn ($routes) => array_merge($routes ?: [], [__DIR__.'/../routes/fallback.php']));
