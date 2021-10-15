@@ -10,7 +10,7 @@ You need to have the [Amasty Shop By Brand](https://amasty.com/shop-by-brand-for
 composer require rapidez/amasty-shop-by-brand
 ```
 
-After that brands are available at `/some-brand` where all products from that brand will be displayed with the configured meta data and the description. If you want to display the brand image somewhere you can use `$product->amasty_brand_image` or `item.amasty_brand_image` within Reactive Search. For example on a product page:
+After that brands are available at `/some_brand` where all products from that brand will be displayed with the configured meta data and the description. If you want to display the brand image somewhere you can use `$product->amasty_brand_image` or `item.amasty_brand_image` within Reactive Search. For example on a product page:
 
 ```
 @if($product->amasty_brand_image)
@@ -20,9 +20,26 @@ After that brands are available at `/some-brand` where all products from that br
 @endif
 ```
 
+### Brand list widget
+
+If you want to use the the `Amasty\ShopbyBrand\Block\Widget\BrandList` widget you can register it in the `config/rapidez.php` file. Useful for a brand cms page with all brands listed.
+```php
+'widgets' => [
+    ...
+    'Amasty\ShopbyBrand\Block\Widget\BrandList' => Rapidez\AmastyShopByBrand\Widgets\BrandList::class,
+],
+```
+
+## Views
+
+If you need to change the views you can publish them with:
+```
+php artisan vendor:publish --provider="Rapidez\AmastyShopByBrand\AmastyShopByBrandServiceProvider" --tag=views
+```
+
 ## Note
 
-Currently only brand pages and images are implemented.
+Currently only brand pages, the brand list widget and images are implemented.
 
 ## License
 
