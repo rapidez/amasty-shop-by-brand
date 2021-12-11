@@ -9,6 +9,6 @@
     <x-rapidez::listing query="{ terms: { '{{ Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer') }}.keyword': ['{{ $brand->name }}'] } }"/>
 
     <div class="prose prose-green max-w-none">
-        {!! $brand->description !!}
+        @content($brand->description)
     </div>
 @endsection
