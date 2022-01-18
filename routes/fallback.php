@@ -1,8 +1,9 @@
 <?php
 
 if ($option = DB::table('eav_attribute_option')
+    ->join('eav_attribute', 'eav_attribute.attribute_id', '=', 'eav_attribute_option.attribute_id')
+    ->where('eav_attribute.attribute_code', Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer'))
     ->join('eav_attribute_option_value', 'eav_attribute_option_value.option_id', '=', 'eav_attribute_option.option_id')
-    ->where('attribute_id', 83)
     ->where('store_id', 0)
     ->where(function ($query) {
         $query->where('value', str_replace('_', ' ', request()->path()))
