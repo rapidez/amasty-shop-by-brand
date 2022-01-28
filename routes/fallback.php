@@ -27,7 +27,7 @@ if ($brand = DB::table('amasty_amshopby_option_setting')
     })
     ->first()) {
     if ($brand = DB::table('amasty_amshopby_option_setting')
-        ->where('value', $option->option_id)
+        ->where('value',$option->option_id)
         ->where('store_id', 0)
         ->first()) {
         $brand->name = $option->value;
