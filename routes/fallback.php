@@ -1,6 +1,22 @@
 <?php
 
-if ($option = DB::table('eav_attribute_option')
+if ($brand = DB::table('amasty_amshopby_option_setting')
+    ->where(function ($query) {
+        $query->where('url_alias', '/'.request()->path())
+            ->orWhere('url_alias', request()->path());
+    })
+    ->where('store_id', 0)
+    ->first()) {
+
+    $option = DB::table('eav_attribute_option_value')
+        ->where('option_id',$brand->value)
+        ->first();
+
+    $brand->name = $option->value;
+
+    echo view('amastyshopbybrand::brand-overview', compact('brand'));
+
+} elseif ($option = DB::table('eav_attribute_option')
     ->join('eav_attribute', 'eav_attribute.attribute_id', '=', 'eav_attribute_option.attribute_id')
     ->where('eav_attribute.attribute_code', Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer'))
     ->join('eav_attribute_option_value', 'eav_attribute_option_value.option_id', '=', 'eav_attribute_option.option_id')
@@ -11,7 +27,7 @@ if ($option = DB::table('eav_attribute_option')
     })
     ->first()) {
     if ($brand = DB::table('amasty_amshopby_option_setting')
-        ->where('value', $option->option_id)
+        ->where('value',$option->option_id)
         ->where('store_id', 0)
         ->first()) {
         $brand->name = $option->value;

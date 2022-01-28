@@ -15,6 +15,7 @@ class BrandList
             'brands' => DB::table('amasty_amshopby_option_setting')
                 ->selectRaw('
                     ANY_VALUE(eav_attribute_option_value.value) as label,
+                    ANY_VALUE(amasty_amshopby_option_setting.url_alias) as url_alias,
                     ANY_VALUE(amasty_amshopby_option_setting.image) as image
                 ')
                 ->join('eav_attribute_option_value', 'amasty_amshopby_option_setting.value', '=', 'eav_attribute_option_value.option_id')
