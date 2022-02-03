@@ -14,7 +14,7 @@
         @endif
 
         <li class="flex w-1/2 sm:w-1/6 px-2 mb-2">
-            <a href="/{{ !empty($brand->url_alias) ? ltrim($brand->url_alias,'/') : strtolower(str_replace(' ', '_', $brand->label)) }}" class="flex flex-1 w-full items-center justify-center border rounded p-3 hover:border-primary transition duration-150 ease-in-out overflow-hidden h-[130px] md:h-[170px]">
+            <a href="/{{ ltrim($product->amasty_brand_url,'/') }}" class="flex flex-1 w-full items-center justify-center border rounded p-3 hover:border-primary transition duration-150 ease-in-out overflow-hidden h-[130px] md:h-[170px]">
                 @if($brand->image)
                     <img src="{{ config('rapidez.media_url').'/amasty/shopby/option_images/'.$brand->image }}" class="max-h-[100px] md:max-h-[130px] lg:max-h-[170px] w-auto self-center" alt="{{ $brand->label }}"/>
                 @else
