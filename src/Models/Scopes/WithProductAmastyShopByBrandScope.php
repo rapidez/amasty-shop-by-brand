@@ -15,6 +15,7 @@ class WithProductAmastyShopByBrandScope implements Scope
 
         $builder
             ->selectRaw('MAX(amasty_amshopby_option_setting.image) as amasty_brand_image')
+            ->selectRaw("IF(MAX(amasty_amshopby_option_setting.url_alias) !='', MAX(amasty_amshopby_option_setting.url_alias), REPLACE(".$model->getTable().'.'.$attribute."_value,' ', '_')) as amasty_brand_url")
             ->leftJoin('amasty_amshopby_option_setting', function ($join) use ($model, $attribute) {
                 $join->on($model->getTable().'.'.$attribute, '=', 'amasty_amshopby_option_setting.value')
                      ->where('filter_code', 'attr_'.$attribute);
