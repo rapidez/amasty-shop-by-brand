@@ -14,7 +14,7 @@ After that brands are available at `/some_brand` where all products from that br
 
 ```
 @if($product->amasty_brand_image)
-    <a href="/{{ strtolower(str_replace([' ', '-'], '_', $product->manufacturer)) }}">
+    <a href="{{ $product->amasty_brand_url }}">
         <img src="{{ config('rapidez.media_url').'/amasty/shopby/option_images/'.$product->amasty_brand_image }}" alt="{{ $product->manufacturer }}" class="h-10">
     </a>
 @endif
