@@ -21,6 +21,7 @@ if ($brand = DB::table('amasty_amshopby_option_setting')
     ->where('store_id', 0)
     ->where(function ($query) {
         $query->where('value', str_replace('_', ' ', request()->path()))
+              ->orWhere('value', str_replace('-', ' ', request()->path()))
               ->orWhere('value', str_replace('_', '-', request()->path()));
     })
     ->first()) {
