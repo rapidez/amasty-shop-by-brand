@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.4.2...master)
+## [Unreleased](https://github.com/org/repo/compare/0.5.1...master)
+
+## [0.5.1](https://github.com/org/repo/compare/0.4.2...0.5.1) - 2022-04-11
+
+### Changed
+
+- Laravel 9 compatibility (3b9ccb0)
 
 ## [0.4.2](https://github.com/org/repo/compare/0.4.1...0.4.2) - 2022-03-04
 
@@ -65,5 +71,3 @@
 ## [0.1.0](https://github.com/org/repo/compare/e66f2f9cda80040663c5176e9de143ac2ca8b204...0.1.0) - 2021-06-30
 
 Initial release
-
-
