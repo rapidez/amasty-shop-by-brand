@@ -3,7 +3,7 @@
 namespace Rapidez\AmastyShopByBrand\Widgets;
 
 use Illuminate\Support\Facades\DB;
-use Rapidez\Core\RapidezFacade as Rapidez;
+use Rapidez\Core\Facades\Rapidez;
 
 class BrandList
 {

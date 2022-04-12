@@ -5,7 +5,7 @@ namespace Rapidez\AmastyShopByBrand\Models\Scopes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
-use Rapidez\Core\RapidezFacade as Rapidez;
+use Rapidez\Core\Facades\Rapidez;
 
 class WithProductAmastyShopByBrandScope implements Scope
 {
