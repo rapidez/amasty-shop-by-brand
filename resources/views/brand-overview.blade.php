@@ -6,7 +6,11 @@
 @section('content')
     <h1 class="font-bold text-3xl mb-5">{{ $brand->title ?: $brand->name }}</h1>
 
-    <x-rapidez::listing query="{ terms: { '{{ Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer') }}.keyword': ['{{ $brand->name }}'] } }"/>
+    @if($brand->product_count)
+        <x-rapidez::listing query="{ terms: { '{{ Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer') }}.keyword': ['{{ $brand->name }}'] } }"/>
+    @else
+        @lang('Currently we do not have any products from this brand.')
+    @endif
 
     <div class="prose prose-green max-w-none">
         @content($brand->description)

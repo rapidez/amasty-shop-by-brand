@@ -1,6 +1,13 @@
 <?php
 
 if ($brand = DB::table('amasty_amshopby_option_setting')
+    ->select('*')
+    ->selectSub(
+        DB::table('catalog_product_flat_'.config('rapidez.store'))
+            ->selectRaw('COUNT(*)')
+            ->whereColumn(Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer'), 'value'),
+        'product_count'
+    )
     ->where(function ($query) {
         $query->where('url_alias', '/'.request()->path())
             ->orWhere('url_alias', request()->path());
@@ -26,6 +33,13 @@ if ($brand = DB::table('amasty_amshopby_option_setting')
     })
     ->first()) {
     if ($brand = DB::table('amasty_amshopby_option_setting')
+        ->select('*')
+        ->selectSub(
+            DB::table('catalog_product_flat_'.config('rapidez.store'))
+                ->selectRaw('COUNT(*)')
+                ->where($option->attribute_code, $option->option_id),
+            'product_count'
+        )
         ->where('value', $option->option_id)
         ->where('store_id', 0)
         ->first()) {
