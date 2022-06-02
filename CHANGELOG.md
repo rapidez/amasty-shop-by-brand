@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.5.2...master)
+## [Unreleased](https://github.com/org/repo/compare/0.5.3...master)
+
+## [0.5.3](https://github.com/org/repo/compare/0.5.2...0.5.3) - 2022-06-02
+
+### Fixed
+
+- Do not render the listing when there are not products (37745f1)
 
 ## [0.5.2](https://github.com/org/repo/compare/0.5.1...0.5.2) - 2022-04-12
 
