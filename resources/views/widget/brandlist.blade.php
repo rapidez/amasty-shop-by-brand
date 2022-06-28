@@ -8,7 +8,7 @@
 
 @foreach(range('A','Z') as $letter)
     @foreach($brands->filter(fn($brand) => strtoupper($brand->label[0]) == $letter) as $brand)
-        @if($brand->count && $brand->count > 0)
+        @if($brand->count)
             @if($loop->first)
                 <strong id="{{ $letter }}" class="block text-lg">{{ $letter }}</strong>
                 <ul class="flex flex-wrap -mx-2 my-5">
