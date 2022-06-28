@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.5.3...master)
+## [Unreleased](https://github.com/org/repo/compare/0.5.4...master)
+
+## [0.5.4](https://github.com/org/repo/compare/0.5.3...0.5.4) - 2022-06-28
+
+### Fixed
+
+- Do not show brands without products (#10)
 
 ## [0.5.3](https://github.com/org/repo/compare/0.5.2...0.5.3) - 2022-06-02
 
