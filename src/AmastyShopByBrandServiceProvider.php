@@ -5,6 +5,9 @@ namespace Rapidez\AmastyShopByBrand;
 use Illuminate\Support\ServiceProvider;
 use Rapidez\AmastyShopByBrand\Models\Scopes\WithProductAmastyShopByBrandScope;
 use TorMorten\Eventy\Facades\Eventy;
+use Rapidez\AmastyShopByBrand\Http\Controllers\AmastyShopByBrandController;
+use Rapidez\Core\Facades\Rapidez;
+use Rapidez\AmastyShopByBrand\Resolvers\BrandResolver;
 
 class AmastyShopByBrandServiceProvider extends ServiceProvider
 {
@@ -16,7 +19,19 @@ class AmastyShopByBrandServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/amastyshopbybrand'),
         ], 'views');
 
-        Eventy::addFilter('routes', fn ($routes) => array_merge($routes ?: [], [__DIR__.'/../routes/fallback.php']));
+        Rapidez::addFallbackRoute(AmastyShopByBrandController::class, 10);
         Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyShopByBrandScope::class]));
+    }
+
+    public function register() : void
+    {
+        $this->registerBindings();
+    }
+
+    protected function registerBindings() : static
+    {
+        BrandResolver::bind();
+
+        return $this;
     }
 }
