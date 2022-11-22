@@ -2,9 +2,6 @@
 
 namespace Rapidez\AmastyShopByBrand\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Rapidez\Core\Facades\Rapidez;
 use Rapidez\AmastyShopByBrand\Resolvers\BrandResolver;
 
 class AmastyShopByBrandController

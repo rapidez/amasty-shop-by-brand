@@ -7,7 +7,7 @@ use Rapidez\Core\Facades\Rapidez;
 
 class BrandResolver
 {
-    public function byPath(string $path = '') : ?object
+    public function byPath(string $path = ''): ?object
     {
         $path = $path ?: request()->path();
         $brand = DB::table('amasty_amshopby_option_setting')
@@ -38,7 +38,7 @@ class BrandResolver
         return $brand;
     }
 
-    public function byOptionValue(string $path = '') : ?object
+    public function byOptionValue(string $path = ''): ?object
     {
         $path = $path ?: request()->path();
         $option = DB::table('eav_attribute_option')
@@ -53,7 +53,7 @@ class BrandResolver
             })
             ->first();
 
-        if(
+        if (
             !$option ||
             !str($option->value)->lower()->is($path) &&
             !str($option->value)->slug()->is(str($path)->lower())
