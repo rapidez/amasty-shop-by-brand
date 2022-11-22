@@ -9,17 +9,11 @@ use Rapidez\AmastyShopByBrand\Resolvers\BrandResolver;
 
 class AmastyShopByBrandController
 {
-    public function __invoke(Request $request)
+    public function __invoke(BrandResolver $resolver)
     {
-        $resolver = app(BrandResolver::class);
+        $brand = $resolver->byPath() ?? $resolver->byOptionValue();
 
-        $brand = $resolver->byPath();
-
-        if (!$brand) {
-            $brand = $resolver->byOptionValue();
-        }
-
-        if($brand) {
+        if ($brand) {
             return view('amastyshopbybrand::brand-overview', compact('brand'));
         }
     }
