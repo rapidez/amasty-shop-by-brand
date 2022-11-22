@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.5.4...master)
+## [Unreleased](https://github.com/org/repo/compare/0.6.0...master)
+
+## [0.6.0](https://github.com/org/repo/compare/0.5.4...0.6.0) - 2022-11-22
+
+### Changed
+
+- Refactored route handling and prevent double routes (#11)
 
 ## [0.5.4](https://github.com/org/repo/compare/0.5.3...0.5.4) - 2022-06-28
 
