@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.6.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.6.1...master)
+
+## [0.6.1](https://github.com/org/repo/compare/0.6.0...0.6.1) - 2022-12-07
+
+### Fixed
+
+- Get brand data from store view with fallback on default store (#12)
 
 ## [0.6.0](https://github.com/org/repo/compare/0.5.4...0.6.0) - 2022-11-22
 
