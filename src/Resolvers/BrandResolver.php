@@ -84,7 +84,7 @@ class BrandResolver
             ->where('main_option.store_id', 0)
             ->first();
 
-        if(!$brand) {
+        if (!$brand) {
             return $brand;
         }
 
