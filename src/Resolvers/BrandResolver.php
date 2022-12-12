@@ -84,6 +84,10 @@ class BrandResolver
             ->where('main_option.store_id', 0)
             ->first();
 
+        if(!$brand) {
+            return $brand;
+        }
+
         $brand->name = $option->value;
 
         return $brand;
