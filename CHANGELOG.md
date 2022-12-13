@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.6.2...master)
+## [Unreleased](https://github.com/org/repo/compare/0.6.3...master)
+
+## [0.6.3](https://github.com/org/repo/compare/0.6.2...0.6.3) - 2022-12-13
+
+### Fixed
+
+- Add main_option alias (#14)
 
 ## [0.6.2](https://github.com/org/repo/compare/0.6.1...0.6.2) - 2022-12-12
 
