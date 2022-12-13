@@ -12,7 +12,7 @@ class BrandResolver
     {
         $rawSelect = $this->getRawSelect();
         $path = $path ?: request()->path();
-        $brand = DB::table('amasty_amshopby_option_setting')
+        $brand = DB::table('amasty_amshopby_option_setting AS main_option')
             ->selectRaw($rawSelect)
             ->selectSub(
                 DB::table('catalog_product_flat_'.config('rapidez.store'))
@@ -68,7 +68,7 @@ class BrandResolver
             return null;
         }
 
-        $brand = DB::table('amasty_amshopby_option_setting')
+        $brand = DB::table('amasty_amshopby_option_setting AS main_option')
             ->selectRaw($rawSelect)
             ->selectSub(
                 DB::table('catalog_product_flat_'.config('rapidez.store'))
