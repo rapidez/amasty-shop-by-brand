@@ -1,7 +1,7 @@
 </div>
 
 @foreach(range('A','Z') as $letter)
-    <a href="#{{ $letter }}" data-turbolinks="false">{{ $letter }}</a>
+    <a href="#{{ $letter }}" data-turbo="false">{{ $letter }}</a>
 @endforeach
 
 <hr class="my-5">
