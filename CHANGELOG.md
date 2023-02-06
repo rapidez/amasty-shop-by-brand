@@ -1,5 +1,11 @@
 # Changelog 
 
+## 0.7.2 - 2023-02-06
+
+### Fixed
+
+- Return store view specific url, try to find brand in store view or default (#17)
+
 ## 0.7.1 - 2023-01-31
 
 ### Fixed
