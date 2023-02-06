@@ -25,7 +25,10 @@ class BrandResolver
                     ->where('store_option.store_id', config('rapidez.store'));
             })
             ->where(function ($query) use ($path) {
-                $query->where('main_option.url_alias', '/'.$path)
+                $query
+                    ->where('store_option.url_alias', '/'.$path)
+                    ->orWhere('store_option.url_alias', $path)
+                    ->orWhere('main_option.url_alias', '/'.$path)
                     ->orWhere('main_option.url_alias', $path);
             })
             ->where('main_option.store_id', 0)
@@ -80,7 +83,11 @@ class BrandResolver
                 $join->on('store_option.value', 'main_option.value')
                 ->where('store_option.store_id', config('rapidez.store'));
             })
-            ->where('main_option.value', $option->option_id)
+            ->where(
+                fn ($query) => $query
+                    ->where('store_option.value', $option->option_id)
+                    ->orWhere('main_option.value', $option->option_id)
+            )
             ->where('main_option.store_id', 0)
             ->first();
 
