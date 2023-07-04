@@ -9,9 +9,8 @@ class AmastyShopByBrandController
     public function __invoke(BrandResolver $resolver)
     {
         $brand = $resolver->byPath() ?? $resolver->byOptionValue();
+        abort_unless($brand, 404);
 
-        if ($brand) {
-            return view('amastyshopbybrand::brand-overview', compact('brand'));
-        }
+        return view('amastyshopbybrand::brand-overview', compact('brand'));
     }
 }
