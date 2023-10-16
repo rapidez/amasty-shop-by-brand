@@ -15,7 +15,7 @@ class AmastyAmshopbyOptionSetting extends Model
     {
         $this->loadMissing(['optionValue']);
 
-        return $this->optionValue->value;
+        return $this->optionValue?->value;
     }
 
     public function fillMissing()
@@ -45,7 +45,8 @@ class AmastyAmshopbyOptionSetting extends Model
             config('rapidez.models.product'),
             Rapidez::config('amshopby_brand/general/attribute_code', 'manufacturer'),
             'value',
-        )->withoutGlobalScopes();
+        )
+        ->withoutGlobalScopes();
     }
 
     public function optionValue() 
