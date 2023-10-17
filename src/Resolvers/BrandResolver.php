@@ -3,7 +3,6 @@
 namespace Rapidez\AmastyShopByBrand\Resolvers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use Rapidez\AmastyShopByBrand\Models\AmastyAmshopbyOptionSetting;
 use Rapidez\Core\Facades\Rapidez;
 
@@ -20,12 +19,12 @@ class BrandResolver
                 ->where('store_id', config('rapidez.store'))
                 ->where(
                     fn ($query) => $query
-                    ->where('url_alias', '/' . $path)
+                    ->where('url_alias', '/'.$path)
                     ->orWhere('url_alias', $path)
                     ->orWhereHas(
-                        'defaultAmshopbyOptionSetting', 
+                        'defaultAmshopbyOptionSetting',
                         fn ($query) => $query
-                        ->where('url_alias', '/' . $path)
+                        ->where('url_alias', '/'.$path)
                         ->orWhere('url_alias', $path)
                     )
                 )
@@ -35,7 +34,7 @@ class BrandResolver
                 ->where('store_id', 0)
                 ->where(
                     fn ($query) => $query
-                    ->where('url_alias', '/' . $path)
+                    ->where('url_alias', '/'.$path)
                     ->orWhere('url_alias', $path)
                 )
             )
@@ -60,8 +59,8 @@ class BrandResolver
             fn ($query) => $query
             ->whereIn('store_id', [0, config('rapidez.store')])
             ->whereHas(
-                'optionValue', 
-                fn($query) => $query
+                'optionValue',
+                fn ($query) => $query
                 ->where(
                     fn ($query) => $query
                     ->where('value', str_replace('_', ' ', $path))

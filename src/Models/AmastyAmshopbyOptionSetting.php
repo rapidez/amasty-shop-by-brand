@@ -39,7 +39,7 @@ class AmastyAmshopbyOptionSetting extends Model
         ->where('store_id', 0);
     }
 
-    public function products() 
+    public function products()
     {
         return $this->hasMany(
             config('rapidez.models.product'),
@@ -49,7 +49,7 @@ class AmastyAmshopbyOptionSetting extends Model
         ->withoutGlobalScopes();
     }
 
-    public function optionValue() 
+    public function optionValue()
     {
         return $this->hasOne(
             config('rapidez.models.optionvalue'),
