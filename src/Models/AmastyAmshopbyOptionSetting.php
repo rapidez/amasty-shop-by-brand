@@ -52,7 +52,7 @@ class AmastyAmshopbyOptionSetting extends Model
     public function optionValue()
     {
         return $this->hasOne(
-            config('rapidez.models.option_value'),
+            config('rapidez.models.optionvalue', config('rapidez.models.option_value')),
             'option_id',
             'value',
         )
