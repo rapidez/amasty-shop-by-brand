@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/0.8.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/0.8.1...master)
+## [0.8.1](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/0.8.1) - 2023-11-03
+
+### Fixed
+
+- Rapidez v1 support (#20)
+
 ## [0.8.0](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/0.8.0) - 2023-10-17
 
 ### Changed
