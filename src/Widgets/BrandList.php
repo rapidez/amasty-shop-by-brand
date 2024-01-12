@@ -22,6 +22,7 @@ class BrandList
                 ->join('eav_attribute_option_value', 'amasty_amshopby_option_setting.value', '=', 'eav_attribute_option_value.option_id')
                 ->join('catalog_product_flat_'.config('rapidez.store'), 'amasty_amshopby_option_setting.value', '=', 'catalog_product_flat_'.config('rapidez.store').'.'.$attribute)
                 ->where('eav_attribute_option_value.store_id', 0)
+                ->where('amasty_amshopby_option_setting.is_show_in_widget', 1)
                 ->groupBy('amasty_amshopby_option_setting.value')
                 ->get(),
         ])->render();
