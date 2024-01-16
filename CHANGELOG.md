@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/0.8.1...master)
+[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/0.8.2...master)
+## [0.8.2](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/0.8.2) - 2024-01-16
+
+### Fixed
+
+- Listen to "show in brand list widget" option (#21)
+
 ## [0.8.1](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/0.8.1) - 2023-11-03
 
 ### Fixed
