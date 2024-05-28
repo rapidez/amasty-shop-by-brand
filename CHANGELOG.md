@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/0.9.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-shop-by-brand/compare/2.0.0...master)
+## [2.0.0](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/2.0.0) - 2024-05-28
+
+### Added
+
+- Laravel 11 support (#23)
+
 ## [0.9.0](https://github.com/rapidez/amasty-shop-by-brand/releases/tag/0.9.0) - 2024-03-21
 
 ### Added
